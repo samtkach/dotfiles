@@ -1,0 +1,18 @@
+# ---------------------------------------------------------------------------
+# .gitconfig
+#
+# A simple git configuration
+#
+# Maintained by Sam Tkach
+# https://github.com/samtkach/dotfiles
+# ---------------------------------------------------------------------------
+
+
+
+[user]
+    name = Sam Tkach
+[core]
+    editor = vim
+[push]
+    default = current
+
