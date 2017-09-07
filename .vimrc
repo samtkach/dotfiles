@@ -1,11 +1,12 @@
 " ---------------------------------------------------------------------------
 " .vimrc
 "
-" Maintained by Sam Tkach
-" 
-" https://github.com/samtkach/dotfiles
+" A simple vim configuration that takes what I like from various others
+" (cited inline)
 "
-" " ---------------------------------------------------------------------------
+" Maintained by Sam Tkach
+" https://github.com/samtkach/dotfiles
+" ---------------------------------------------------------------------------
 
 
 
