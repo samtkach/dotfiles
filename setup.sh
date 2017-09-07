@@ -2,12 +2,14 @@
 # ---------------------------------------------------------------------------
 # setup.sh
 #
-# A bash script to copy old files to ~/dotfiles_old and copy the new ones 
-# into the home DIR_PATHectory.
+# A bash script to copy old dotfiles to ~/dotfiles_old and copy the new ones 
+# into the home directory. It also fills fills in the gitconfig email from 
+# user input.
 #
 # Maintained by Sam Tkach
 # https://github.com/samtkach/dotfiles
 # ---------------------------------------------------------------------------
+
 
 
 SCRIPT_PATH=`realpath $0`
@@ -27,5 +29,9 @@ for path in $DIR_PATH/.[^\s][^.]*; do
     echo "|--> $bn"
 done
 
-echo "Done."
+read -p "Enter an email address to use with git: " EMAIL
+git config --global user.email $EMAIL
+echo "Your global git config has been updated."
+
+
 
