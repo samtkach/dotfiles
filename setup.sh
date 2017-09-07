@@ -3,28 +3,28 @@
 # setup.sh
 #
 # A bash script to copy old files to ~/dotfiles_old and copy the new ones 
-# into the home directory.
+# into the home DIR_PATHectory.
 #
 # Maintained by Sam Tkach
 # https://github.com/samtkach/dotfiles
 # ---------------------------------------------------------------------------
 
 
+SCRIPT_PATH=`realpath $0`
+DIR_PATH=`dirname $SCRIPT_PATH`
+OLD_PATH=~/dotfiles_old
+FILES=".bashrc .vimrc .gitignore .tmux.conf"
 
-set -e
-
-dir=dirname "$(readlink -f "$0")"
-olddir=~/dotfiles_old
-
+mkdir -p $OLD_PATH
 
 echo "Moving old dotfiles to ~/dotfiles_old and getting new ones...";
 echo "Replacing:"
 
-for path in $dir/.*; do
-    bn=basename $path;
-    mv ~/$bn ~/$olddir/$bn;
-    ln -s path ~/$bn;
-    echo "|--> $(bn)"
+for path in $DIR_PATH/.[^\s][^.]*; do
+    bn=`basename $path`;
+    mv ~/$bn $OLD_PATH/$bn;
+    ln -s $path ~/$bn;
+    echo "|--> $bn"
 done
 
 echo "Done."
