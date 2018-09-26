@@ -107,6 +107,8 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 
+" Custom settings for some filetypes
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 " ***************************************************************************
 " VIM-PLUG CORE & PACKAGES
